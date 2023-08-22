@@ -1,0 +1,1273 @@
+{
+	"info": {
+		"_postman_id": "9c4c0384-2d75-4de3-93e3-ece0dd0664b8",
+		"name": "fdbi2023-api2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4680186"
+	},
+	"item": [
+		{
+			"name": "Application Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}",
+					"host": [
+						"{{URL_BASE}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Cidades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}/cidade/list",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"cidade",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Cidades by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}cidade/get/1",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Cidades by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}cidade/delete/4",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Cidades by id inexistente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}cidade/get/4",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"get",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Cidades by id inválido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}cidade/get/a",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"get",
+						"a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Cidades by id blank",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}cidade/get/\"\"",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"get",
+						"\"\""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Cidade",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Cidade4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}cidade/save",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Cidade sem nome",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    // \"nome\": \"Cidade4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}cidade/save",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Cidade nome blanck",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}cidade/save",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Cidade JSON nulo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//     \"nome\": \"\"\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}cidade/save",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cidade",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Cidade4...\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}cidade/update/4",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cidade com POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Cidade4...\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}cidade/update/4",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cidade id inexistente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Cidade4...\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}cidade/update/5",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"update",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cidade nome nulo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    // \"nome\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}cidade/update/4",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cidade JSON nulo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//     \"nome\": \"\"\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}cidade/update/4",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cidade nome blank",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}cidade/update/4",
+					"host": [
+						"{{URL_BASE}}cidade"
+					],
+					"path": [
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Funcionários",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/list",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Funcioanrios by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/get/1",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Funcioanrio by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/delete/4",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Funcioanrios by id inválido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/get/4",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"get",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Funcionário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cidadeId\": 4,\r\n    \"nome\": \"Funcionario4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/save",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Funcionário com cidade inexistente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cidadeId\": 9,\r\n    \"nome\": \"Funcionario4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/save",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Funcionário com cidade inválido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cidadeId\": \"a\",\r\n    \"nome\": \"Funcionario4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/save",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Funcionário sem cidade",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    // \"cidadeId\": 4,\r\n    \"nome\": \"Funcionario4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/save",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Funcionário sem nome",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cidadeId\": 4\r\n    // \"nome\": \"Funcionario4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/save",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Funcionário nome blank",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cidadeId\": 4,\r\n    \"nome\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/save",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Funcionário JSON nulo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//     \"cidadeId\": 4,\r\n//     \"nome\": \"\"\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/save",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Funcionário",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cidadeId\":4,\r\n    \"nome\": \"Funcionario4 ***\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/update/4",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Funcionário com POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cidadeId\":4,\r\n    \"nome\": \"Funcionario4 ***\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/update/4",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Funcionário sem cidade",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    // \"cidadeId\":4,\r\n    \"nome\": \"Funcionario4 ***\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/update/4",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Funcionário sem nome",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cidadeId\":4\r\n    // \"nome\": \"Funcionario4 ***\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/update/4",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Funcionário id inexistente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cidadeId\":3,\r\n    \"nome\": \"Funcionario4 ***\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/update/5",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"update",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Funcionário id inválido",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cidadeId\":3,\r\n    \"nome\": \"Funcionario4 ***\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/update/a",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"update",
+						"a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Funcionário JSON nulo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//     \"cidadeId\":3,\r\n//     \"nome\": \"Funcionario4 ***\"\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}funcionario/update/4",
+					"host": [
+						"{{URL_BASE}}funcionario"
+					],
+					"path": [
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Reajustes Salários",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/list/",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Reajustes Salários by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/get/1",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Reajustes Salários by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/delete/4",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Reajustes Salários by inexistente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/get/5",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"get",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Reajustes Salários by inválido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/get/a",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"get",
+						"a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Reajustes Salários by blank",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/get/\"\"",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"get",
+						"\"\""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Reajuste Salário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dataReajuste\": \"22/08/2023\",\r\n    \"funcionarioId\": 3,\r\n    \"valorSalario\": 4000.5\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/save/",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Reajuste Salário Funcionário Inexistente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dataReajuste\": \"22/08/2023\",\r\n    \"funcionarioId\": 9,\r\n    \"valorSalario\": 4000.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/save/",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Reajuste Salário Funcionário id inválido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dataReajuste\": \"22/08/2023\",\r\n    \"funcionarioId\": a,\r\n    \"valorSalario\": 4000.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/save/",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Reajuste Salário Funcionário id blank",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dataReajuste\": \"22/08/2023\",\r\n    \"funcionarioId\": \"\",\r\n    \"valorSalario\": 4000.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/save/",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Reajuste Salário sem Funcionário id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dataReajuste\": \"22/08/2023\",\r\n    // \"funcionarioId\": \"\",\r\n    \"valorSalario\": 4000.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/save/",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Reajuste Salário dataRegistro  blank",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dataReajuste\": \"\",\r\n    \"funcionarioId\": 3,\r\n    \"valorSalario\": 4000.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/save/",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Reajuste Salário sem dataRegistro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    // \"dataReajuste\": \"\",\r\n    \"funcionarioId\": 3,\r\n    \"valorSalario\": 4000.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/save/",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Reajuste Salário dataRegistro incorreta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dataReajuste\": \"2023-08-21\",\r\n    \"funcionarioId\": 3,\r\n    \"valorSalario\": 4000.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/save/",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Reajuste Salário duplicado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dataReajuste\": \"21/08/2023\",\r\n    \"funcionarioId\": 1,\r\n    \"valorSalario\": 4000.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/save/",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Reajustes Salários by funcionário",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/funcionario/3",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"funcionario",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Reajustes Salários by funcionário id inexistente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/funcionario/9",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"funcionario",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Reajustes Salários by funcionário id inválido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/funcionario/a",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"funcionario",
+						"a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Reajustes Salários by funcionário id blank",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}reajusteSalario/funcionario/\"\"",
+					"host": [
+						"{{URL_BASE}}reajusteSalario"
+					],
+					"path": [
+						"funcionario",
+						"\"\""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "URL_BASE",
+			"value": "http://localhost:8080/api2/"
+		},
+		{
+			"key": "URL_BASE-Debug",
+			"value": "http://localhost:13667/"
+		}
+	]
+}

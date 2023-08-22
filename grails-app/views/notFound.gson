@@ -1,6 +1,6 @@
 response.status 404
 
 json {
-	message "Not Found"
+	message "Method Not Found"
 	error 404
 }
