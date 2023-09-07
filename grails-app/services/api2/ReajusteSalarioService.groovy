@@ -2,11 +2,13 @@ package api2
 
 import grails.gorm.transactions.Transactional
 import api2.ReajusteSalarioDTO
+import grails.web.api.ServletAttributes
+
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter;
 
 @Transactional
-class ReajusteSalarioService {
+class ReajusteSalarioService implements ServletAttributes {
 
     List<ReajusteSalarioDTO> listarTodos() {
         ReajusteSalario.findAll().collect { ReajusteSalario reajuste ->

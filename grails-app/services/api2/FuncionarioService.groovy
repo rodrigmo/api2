@@ -2,9 +2,10 @@ package api2
 
 import grails.gorm.transactions.Transactional
 import api2.FuncionarioDTO
+import grails.web.api.ServletAttributes
 
 @Transactional
-class FuncionarioService {
+class FuncionarioService implements ServletAttributes {
 
     List<FuncionarioDTO> listarTodos() {
         Funcionario.findAll().collect { Funcionario funcionario ->
