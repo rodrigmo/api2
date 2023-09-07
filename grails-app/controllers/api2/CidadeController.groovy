@@ -5,7 +5,6 @@ import grails.rest.*
 import org.grails.web.json.JSONException
 import org.springframework.web.bind.annotation.RestController
 
-@RestController("/cidade")
 class CidadeController {
 
     CidadeService cidadeService
