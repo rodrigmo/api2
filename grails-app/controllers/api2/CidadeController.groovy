@@ -7,23 +7,23 @@ import org.springframework.web.bind.annotation.RestController
 
 class CidadeController {
 
+    static responseFormats = ["json"]
+    static defaultAction = "get"
+    static allowedMethods = [
+            save: "POST",
+            list: "GET",
+            update: "PUT",
+            delete: "DELETE",
+            get: "GET"
+    ]
+
     CidadeService cidadeService
 
     def list() {
-        if (request.method != 'GET') {
-            render status: 405, text: 'Método não permitido'
-            return
-        }
-
         respond cidadeService.listarTodos()
     }
 
     def save() {
-        if (request.method != 'POST') {
-            render status: 405, text: 'Método não permitido'
-            return
-        }
-
         try {
             if (!request.JSON.nome) {
                 render status: 404, text: "Nome da cidade não fornecido."
@@ -39,11 +39,6 @@ class CidadeController {
     }
 
     def update(Long id) {
-        if (request.method != 'PUT') {
-            render status: 405, text: 'Método não permitido'
-            return
-        }
-
         try {
             CidadeDTO cidadeDTO = request.JSON
             if (!cidadeDTO.nome) {
@@ -61,11 +56,6 @@ class CidadeController {
     }
 
     def delete(Long id) {
-        if (request.method != 'DELETE') {
-            render status: 405, text: 'Método não permitido'
-            return
-        }
-
         try {
             cidadeService.deletar(id)
             render status: 200, text: 'Cidade excluída com sucesso.'
@@ -79,11 +69,6 @@ class CidadeController {
     }
 
     def get() {
-        if (request.method != 'GET') {
-            render status: 405, text: 'Método não permitido'
-            return
-        }
-
         try {
             Long cidadeId = Long.parseLong(params.id)
             CidadeDTO cidadeDTO = cidadeService.obterPorId(cidadeId)

@@ -2,9 +2,10 @@ package api2
 
 import grails.gorm.transactions.Transactional
 import api2.CidadeDTO
+import grails.web.api.ServletAttributes
 
 @Transactional
-class CidadeService {
+class CidadeService implements ServletAttributes {
 
     List<CidadeDTO> listarTodos() {
         Cidade.findAll().collect { Cidade cidade ->

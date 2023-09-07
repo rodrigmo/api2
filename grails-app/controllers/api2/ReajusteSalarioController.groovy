@@ -9,23 +9,23 @@ import java.time.format.DateTimeParseException
 @RestController("/reajusteSalario")
 class ReajusteSalarioController {
 
+    static responseFormats = ["json"]
+    static defaultAction = "get"
+    static allowedMethods = [
+            save: "POST",
+            list: "GET",
+            update: "PUT",
+            delete: "DELETE",
+            get: "GET"
+    ]
+
     ReajusteSalarioService reajusteSalarioService
 
     def list() {
-        if (request.method != 'GET') {
-            render status: 405, text: 'Método não permitido'
-            return
-        }
-
         respond reajusteSalarioService.listarTodos()
     }
 
     def save() {
-        if (request.method != 'POST') {
-            render status: 405, text: 'Método não permitido'
-            return
-        }
-
         try {
             if (!request.JSON.dataReajuste) {
                 render status: 400, text: "Data do reajuste não fornecida."
@@ -54,11 +54,6 @@ class ReajusteSalarioController {
     }
 
     def update(Long id) {
-        if (request.method != 'PUT') {
-            render status: 405, text: 'Método não permitido'
-            return
-        }
-
         try {
             Long reajusteId = params.id.toLong()
             ReajusteSalarioDTO reajusteSalarioDTO = request.JSON
@@ -71,11 +66,6 @@ class ReajusteSalarioController {
     }
 
     def delete(Long id) {
-        if (request.method != 'DELETE') {
-            render status: 405, text: 'Método não permitido'
-            return
-        }
-
         try {
             Long reajusteId = params.id.toLong()
             reajusteSalarioService.deletar(id)
@@ -90,11 +80,6 @@ class ReajusteSalarioController {
     }
 
     def get(Long id) {
-        if (request.method != 'GET') {
-            render status: 405, text: 'Método não permitido'
-            return
-        }
-
         try {
             Long reajusteId = params.id.toLong()
             respond reajusteSalarioService.obterPorId(id)
@@ -107,11 +92,6 @@ class ReajusteSalarioController {
 
     // Método adicional para listar reajustes por funcionário
     def listByFuncionario() {
-        if (request.method != 'GET') {
-            render status: 405, text: 'Método não permitido'
-            return
-        }
-
         try {
             def funcionarioId = params.funcionarioId.toLong()
             respond reajusteSalarioService.getByFuncionario(funcionarioId)
