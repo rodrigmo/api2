@@ -1,8 +1,6 @@
 package api2
 
-import api2.FuncionarioDTO
-import grails.rest.*
-import org.springframework.web.bind.annotation.RestController
+import api2.dtos.FuncionarioDTO
 
 class FuncionarioController {
 

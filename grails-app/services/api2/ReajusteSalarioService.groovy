@@ -1,7 +1,7 @@
 package api2
 
 import grails.gorm.transactions.Transactional
-import api2.ReajusteSalarioDTO
+import api2.dtos.ReajusteSalarioDTO
 import grails.web.api.ServletAttributes
 
 import java.time.LocalDate

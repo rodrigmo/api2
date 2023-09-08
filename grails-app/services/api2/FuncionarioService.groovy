@@ -1,7 +1,7 @@
 package api2
 
 import grails.gorm.transactions.Transactional
-import api2.FuncionarioDTO
+import api2.dtos.FuncionarioDTO
 import grails.web.api.ServletAttributes
 
 @Transactional

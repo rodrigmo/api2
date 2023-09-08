@@ -1,7 +1,6 @@
 package api2
 
-import api2.ReajusteSalarioDTO
-import grails.rest.*
+import api2.dtos.ReajusteSalarioDTO
 import org.springframework.web.bind.annotation.RestController
 
 import java.time.format.DateTimeParseException
