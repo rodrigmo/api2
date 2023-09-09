@@ -9,13 +9,13 @@ import org.springframework.dao.DataIntegrityViolationException
 @Transactional
 class CidadeService implements ServletAttributes {
 
-    List<CidadeDTO> listarTodos() {
+    List<CidadeDTO> list() {
         Cidade.findAll().collect { Cidade cidade ->
             new CidadeDTO(id: cidade.id, nome: cidade.nome)
         }
     }
 
-    CidadeDTO salvar(CidadeDTO cidadeDTO) {
+    CidadeDTO save(CidadeDTO cidadeDTO) {
         if (!cidadeDTO.nome) {
             throw new NullPointerException("Nome da cidade não fornecido.")
         }
@@ -27,7 +27,7 @@ class CidadeService implements ServletAttributes {
         return cidadeDTO
     }
 
-    CidadeDTO atualizar(Long id, CidadeDTO cidadeDTO) {
+    CidadeDTO update(Long id, CidadeDTO cidadeDTO) {
         Cidade cidade = Cidade.get(id)
         if (!cidade) {
             throw new NotFoundException("Cidade com ID ${id} não encontrada.")
@@ -58,8 +58,6 @@ class CidadeService implements ServletAttributes {
         } else {
             throw new NotFoundException("Não encontrada cidade para ${id}")
         }
-
-
         return retorno
     }
 

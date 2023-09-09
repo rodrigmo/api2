@@ -18,17 +18,17 @@ class CidadeController implements ExceptionHandlers {
     CidadeService cidadeService
 
     def list() {
-        respond cidadeService.listarTodos()
+        respond cidadeService.list()
     }
 
     def save() {
         CidadeDTO cidadeDTO = request.JSON
-        respond cidadeService.salvar(cidadeDTO)
+        respond cidadeService.save(cidadeDTO)
     }
 
     def update(Long id) {
         CidadeDTO cidadeDTO = request.JSON
-        respond cidadeService.atualizar(id, cidadeDTO)
+        respond cidadeService.update(id, cidadeDTO)
     }
 
     def delete(Long id) {
