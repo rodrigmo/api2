@@ -1,4 +1,4 @@
-package api2
+package api2.dtos
 
 class ReajusteSalarioDTO {
     Long id
